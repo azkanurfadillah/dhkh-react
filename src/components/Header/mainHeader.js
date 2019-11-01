@@ -1,14 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
+import logo_navbar from '../../assets/DHKH.jpg';
+import Search from './search';
 
-const mainHeader = () => (
-    <navbar class="navbar navbar-light bg-light">
-        <a class="navbar-brand">Navbar</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-    </navbar>
+class MainHeader extends Component{
+    render(){
+        return(
+        <navbar className="navbar navbar-light bg-light">
+            <a className="navbar-brand">
+                <img src={logo_navbar} width="50" height="50" className="rounded-circle"  alt="logo dhkh"/>
+            </a>
+            <Search/>
+        </navbar>
+        )
+    }
+}
 
-);
 
-export default mainHeader;
+export default MainHeader;
+
+// const mainHeader = () => (
+//     <navbar class="navbar navbar-light bg-light">
+//         <a class="navbar-brand">
+//             <img src={logo_navbar} width="50" height="50" class="rounded-circle"  alt="logo dhkh"/>
+//         </a>
+//         <Search/>
+//     </navbar>
+
+// );

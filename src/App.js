@@ -1,13 +1,15 @@
 import React from 'react';
 import './App.css';
-
-// import mainHeader from './components/Header/mainHeader';
 import Header from './containers/header';
+import Kedai from './components/Body/Kedai'
+// import mainHeader from './components/Header/mainHeader';
+
 
 function App() {
   return (
     <div className="App">
       <Header/>
+      <Kedai/>
     </div>
   );
 }
