@@ -1,18 +1,17 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
+import { Provider } from "react-redux";
+import store from "./store/store";
 
-import {Provider} from 'react-redux';
-import store from './store/store';
-
-import Home from './containers/Home/Home'
-
+import Home from "./containers/Home/Home";
 
 function App() {
   return (
     <Provider store={store}>
       <div className="App">
-        <Home/>
+        <Home />
+        {/* <Home /> */}
       </div>
     </Provider>
   );

@@ -1,26 +1,22 @@
-.kedai-container{
-    display: block;
-    overflow-y: auto;
+.kedai-container {
+  display: block;
+  overflow-y: auto;
 }
 
-.kedai-list{
-    margin-top: 8px;
-    /* margin-left: 8px; */
+.kedai-list {
+  margin-top: 8px;
 }
 .kedai-list p {
-    display: inline-block;
+  display: inline-block;
 }
 .btn {
-    margin-right:8px;
+  margin-right: 8px;
 }
 
-/* .kedai-detail{
-    display: none;
-} */
-.kedai-detail p{
-    word-wrap : break-word;
-    width: 450px;
-    
+.kedai-detail {
+  background-color: aqua;
 }
 
-
+.kedai-detail p {
+  word-wrap: break-word;
+}

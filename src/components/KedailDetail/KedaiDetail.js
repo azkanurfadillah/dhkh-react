@@ -1,7 +1,20 @@
 import React, { useEffect, useState } from "react";
+import {
+  Tooltip,
+  Button,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+} from "reactstrap";
 
 const KedaiDetail = ({ kedai }) => {
   const [displayDetail, setDisplayDetail] = useState("none");
+  const [modal, setModal] = useState(false);
+  const [tooltipOpen, setTooltipOpen] = useState(false);
+
+  const toggle = () => setTooltipOpen(!tooltipOpen);
+  const toggleModal = () => setModal(!modal);
 
   const handleClick = (e, id) => {
     e.preventDefault();
@@ -26,13 +39,54 @@ const KedaiDetail = ({ kedai }) => {
 
   return (
     <>
-      <button
-        type="button"
-        className="btn btn-primary btn-sm float-right"
-        onClick={(e) => handleClick(e, kedai._id)}
-      >
-        Detail
-      </button>
+      <div className="addt-buttons float-right">
+        <Button
+          outline
+          color="danger"
+          onClick={toggleModal}
+          className="pb-0 px-0"
+          style={{ border: "none" }}
+        >
+          <span class="material-icons" id="TooltipExample">
+            error_outline
+          </span>
+          <Tooltip
+            placement="top"
+            isOpen={tooltipOpen}
+            target="TooltipExample"
+            toggle={toggle}
+          >
+            Hello world!
+          </Tooltip>
+        </Button>
+        <Modal isOpen={modal} toggle={toggleModal}>
+          <ModalHeader toggle={toggleModal}>Modal title</ModalHeader>
+          <ModalBody>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </ModalBody>
+          <ModalFooter>
+            <Button color="primary" onClick={toggle}>
+              Do Something
+            </Button>{" "}
+            <Button color="secondary" onClick={toggle}>
+              Cancel
+            </Button>
+          </ModalFooter>
+        </Modal>
+        <button
+          type="button"
+          className="btn btn-primary btn-sm"
+          onClick={(e) => handleClick(e, kedai._id)}
+        >
+          Detil
+        </button>
+      </div>
       <div
         className="kedai-detail"
         id={kedai._id}
