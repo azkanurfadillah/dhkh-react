@@ -1,17 +1,20 @@
 import React from 'react';
 import './App.css';
-import Header from './containers/header';
-import Kedai from './containers/kedai'
-// import mainHeader from './components/Header/mainHeader';
+
+
+import {Provider} from 'react-redux';
+import store from './store/store';
+
+import Home from './containers/Home/Home'
 
 
 function App() {
   return (
+    <Provider store={store}>
       <div className="App">
-        <Header/>
-        <Kedai/>
+        <Home/>
       </div>
-    
+    </Provider>
   );
 }
 
