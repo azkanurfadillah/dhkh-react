@@ -5,6 +5,8 @@
 
 .kedai-list {
   margin-top: 8px;
+  padding: 0px 10px;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
 }
 .kedai-list p {
   display: inline-block;
@@ -13,10 +15,58 @@
   margin-right: 8px;
 }
 
-.kedai-detail {
-  background-color: aqua;
+.kedai-detail h5 {
+  font-size: 1.2em;
+  margin-bottom: 0;
 }
 
-.kedai-detail p {
-  word-wrap: break-word;
+.kedai-detail .gmap {
+  margin-bottom: 16px;
+}
+
+.gmap a:hover {
+  padding: 10px 0;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ######################################################pg */
+
+.kedai-pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 8px auto;
+}
+
+.kedai-pagination li {
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kedai-pagination .active {
+  background-color: #47ccde;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.kedai-pagination li a:hover {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.kedai-pagination .disabled {
+  background-color: #cccccc;
+  color: #666666;
+  pointer-events: none;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .kedai-list {
+    padding: 10px;
+  }
 }

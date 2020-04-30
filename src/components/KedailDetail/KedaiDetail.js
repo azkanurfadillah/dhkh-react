@@ -1,12 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  Tooltip,
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-} from "reactstrap";
+import React, { useState } from "react";
+import { Tooltip, Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 
 const KedaiDetail = ({ kedai }) => {
   const [displayDetail, setDisplayDetail] = useState("none");
@@ -47,7 +40,7 @@ const KedaiDetail = ({ kedai }) => {
           className="pb-0 px-0"
           style={{ border: "none" }}
         >
-          <span class="material-icons" id="TooltipExample">
+          <span className="material-icons" id="TooltipExample">
             error_outline
           </span>
           <Tooltip
@@ -56,28 +49,16 @@ const KedaiDetail = ({ kedai }) => {
             target="TooltipExample"
             toggle={toggle}
           >
-            Hello world!
+            send us message
           </Tooltip>
         </Button>
         <Modal isOpen={modal} toggle={toggleModal}>
-          <ModalHeader toggle={toggleModal}>Modal title</ModalHeader>
+          <ModalHeader toggle={toggleModal}>
+            ada kesalahan dari info {kedai.nama_kedai}?
+          </ModalHeader>
           <ModalBody>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum.
+            <span className="onworking-ft">feature masih dalam pengerjaan</span>
           </ModalBody>
-          <ModalFooter>
-            <Button color="primary" onClick={toggle}>
-              Do Something
-            </Button>{" "}
-            <Button color="secondary" onClick={toggle}>
-              Cancel
-            </Button>
-          </ModalFooter>
         </Modal>
         <button
           type="button"
@@ -92,20 +73,20 @@ const KedaiDetail = ({ kedai }) => {
         id={kedai._id}
         style={{ display: displayDetail }}
       >
-        <h6>detil lokasi</h6>
+        <h5>detil lokasi</h5>
         <p>{kedai.detil_lokasi}</p>
-        <h6>lihat lokasi di Google Map </h6>
-        <a href={kedai.gmaps_link}> gmaps {kedai.nama_kedai}</a>
-        <h6>jam operasional </h6>
+        <div className="gmap">
+          <h5>lihat lokasi di Google Map </h5>
+          <a href={kedai.gmaps_link}> gmap {kedai.nama_kedai}</a>
+        </div>
+        <h5>jam operasional </h5>
         <p>{kedai.jam_operasional}</p>
-        <h6>menu rekomendasi </h6>
+        <h5>menu rekomendasi </h5>
         <p>{kedai.menu_rekomendasi}</p>
-        <h6>info lain </h6>
+        <h5>info lain </h5>
         <p>{kedai.info_lain}</p>
-        <h6>kontributor</h6>
+        <h5>kontributor</h5>
         <p>{kedai.kontributor}</p>
-        {/* <img/>  */}
-        <hr />
       </div>
     </>
   );
