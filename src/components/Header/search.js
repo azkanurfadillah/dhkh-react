@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
+import algoliasearch from "algoliasearch";
+import { InstantSearch } from "react-instantsearch-dom";
+
 function Search() {
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
@@ -14,7 +17,7 @@ function Search() {
         aria-label="Search"
       />
       <button
-        className="btn btn-outline-light my-0 my-sm-2 search-bttn"
+        className="btn btn-outline-info my-0 my-sm-2 search-bttn"
         type="button"
         onClick={toggleModal}
       >

@@ -1,27 +1,33 @@
+.loading {
+  margin: 10px;
+  text-align: center;
+}
+
 .kedai-container {
-  display: block;
   overflow-y: auto;
 }
 
 .kedai-list {
-  margin-top: 8px;
-  padding: 0px 10px;
+  /* margin-top: 8px; */
+  padding: 10px 13px 5px;
   box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
 }
-.kedai-list p {
-  display: inline-block;
-}
-.btn {
-  margin-right: 8px;
-}
 
+.main-kedai-list {
+  max-width: 330px;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.addt-buttons button {
+  margin: 0 5px;
+}
 .kedai-detail h5 {
   font-size: 1.2em;
   margin-bottom: 0;
 }
 
 .kedai-detail .gmap {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .gmap a:hover {
@@ -47,10 +53,8 @@
   cursor: pointer;
 }
 
-.kedai-pagination .active {
-  background-color: #47ccde;
-  color: #ffffff;
-  text-decoration: none;
+.kedai-pagination li a {
+  outline: none;
 }
 
 .kedai-pagination li a:hover {
@@ -58,15 +62,28 @@
   font-weight: 700;
 }
 
+.kedai-pagination .active {
+  background-color: #4285f4;
+  color: #ffffff;
+  text-decoration: none;
+}
+
 .kedai-pagination .disabled {
   background-color: #cccccc;
-  color: #666666;
   pointer-events: none;
 }
 
+.kedai-pagination .disabled a,
+.kedai-pagination .active a {
+  color: #ffffff;
+}
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   .kedai-list {
-    padding: 10px;
+    padding: 10px 13px 5px;
+  }
+
+  .main-kedai-list {
+    max-width: 260px;
   }
 }

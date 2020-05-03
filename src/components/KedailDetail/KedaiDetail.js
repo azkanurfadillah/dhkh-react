@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Tooltip, Button, Modal, ModalHeader, ModalBody } from "reactstrap";
+import gmapLogo from "../../assets/img/googlemaps.jpeg";
 
 const KedaiDetail = ({ kedai }) => {
-  const [displayDetail, setDisplayDetail] = useState("none");
+  const [hidden, setHidden] = useState(true);
   const [modal, setModal] = useState(false);
   const [tooltipOpen, setTooltipOpen] = useState(false);
 
@@ -13,21 +14,20 @@ const KedaiDetail = ({ kedai }) => {
     e.preventDefault();
     const kedaiSelector = document.querySelectorAll(".kedai-detail");
 
-    console.log(kedaiSelector);
+    // console.log(kedaiSelector);
     kedaiSelector.forEach((thiskedai) => {
-      //   console.log(kedai.id);
       if (thiskedai.id === id) {
-        console.log("haloid", thiskedai.id);
-
-        if (thiskedai.style.display === "none") {
-          console.log("this.kedai", thiskedai);
-          setDisplayDetail("block");
+        console.log("hide", thiskedai.hidden);
+        if (thiskedai.hidden === true) {
+          setHidden(false);
+          thiskedai.removeAttribute("hidden");
         } else {
-          setDisplayDetail("none");
+          setHidden(true);
+          thiskedai.setAttribute("hidden", true);
         }
       }
     });
-    console.log(id);
+    // console.log(id);
   };
 
   return (
@@ -65,26 +65,27 @@ const KedaiDetail = ({ kedai }) => {
           className="btn btn-primary btn-sm"
           onClick={(e) => handleClick(e, kedai._id)}
         >
-          Detil
+          {hidden ? "Detail" : "Close"}
         </button>
       </div>
-      <div
-        className="kedai-detail"
-        id={kedai._id}
-        style={{ display: displayDetail }}
-      >
+      <div hidden className="kedai-detail" id={kedai._id}>
         <h5>detil lokasi</h5>
-        <p>{kedai.detil_lokasi}</p>
+        <p>{kedai.lokasi}</p>
         <div className="gmap">
           <h5>lihat lokasi di Google Map </h5>
-          <a href={kedai.gmaps_link}> gmap {kedai.nama_kedai}</a>
+          <a href={kedai.gmap} target="_blank" rel="noopener">
+            <span>
+              <img height="25" width="auto" src={gmapLogo} alt="gmap logo" />
+            </span>
+            {kedai.nama_kedai}
+          </a>
         </div>
         <h5>jam operasional </h5>
         <p>{kedai.jam_operasional}</p>
         <h5>menu rekomendasi </h5>
         <p>{kedai.menu_rekomendasi}</p>
         <h5>info lain </h5>
-        <p>{kedai.info_lain}</p>
+        <p>{kedai.info_lain && ""}</p>
         <h5>kontributor</h5>
         <p>{kedai.kontributor}</p>
       </div>
