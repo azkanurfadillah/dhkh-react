@@ -73,7 +73,7 @@ const KedaiDetail = ({ kedai }) => {
         <p>{kedai.lokasi}</p>
         <div className="gmap">
           <h5>lihat lokasi di Google Map </h5>
-          <a href={kedai.gmap} target="_blank" rel="noopener">
+          <a href={kedai.gmap} target="_blank" rel="noopener noreferrer">
             <span>
               <img height="25" width="auto" src={gmapLogo} alt="gmap logo" />
             </span>

@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
-import algoliasearch from "algoliasearch";
-import { InstantSearch } from "react-instantsearch-dom";
-
 function Search() {
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
