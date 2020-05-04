@@ -1,0 +1,24 @@
+.wrap-footer {
+  margin: auto 0;
+  height: 2.3em;
+  display: flex;
+}
+
+.line-footer {
+  height: 10px;
+  background-image: linear-gradient(
+    to right bottom,
+    #1a73e8,
+    #8862da,
+    #bd4bbe,
+    #de3299,
+    #ee286f,
+    #f63859,
+    #f84d42,
+    #f56329,
+    #fa7a1e,
+    #fd9012,
+    #fda605,
+    #fbbc05
+  );
+}

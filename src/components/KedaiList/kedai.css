@@ -1,0 +1,95 @@
+.loading {
+  margin: 10px;
+  text-align: center;
+}
+
+.kedai-container {
+  overflow-y: auto;
+}
+
+.kedai-list {
+  /* margin-top: 8px; */
+  padding: 10px 13px 5px;
+  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.1);
+}
+
+.main-kedai-list {
+  max-width: 330px;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.addt-buttons button {
+  margin: 0 5px;
+}
+.kedai-detail h5 {
+  font-size: 1.2em;
+  margin-bottom: 0;
+}
+
+.kedai-detail .gmap {
+  margin-bottom: 12px;
+}
+
+.gmap a:hover {
+  padding: 10px 0;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#broke-pg {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #ea4335;
+  letter-spacing: 0.2px;
+}
+/* ######################################################pg */
+
+.kedai-pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 8px auto;
+}
+
+.kedai-pagination li {
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kedai-pagination li a {
+  outline: none;
+}
+
+.kedai-pagination li a:hover {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.kedai-pagination .active {
+  background-color: #4285f4;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.kedai-pagination .disabled {
+  background-color: #cccccc;
+  pointer-events: none;
+}
+
+.kedai-pagination .disabled a,
+.kedai-pagination .active a {
+  color: #ffffff;
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .kedai-list {
+    padding: 10px 13px 5px;
+  }
+
+  .main-kedai-list {
+    max-width: 260px;
+  }
+}

@@ -1,0 +1,120 @@
+.line-header {
+  height: 15px;
+  background-image: linear-gradient(
+    to right bottom,
+    #1a73e8,
+    #8862da,
+    #bd4bbe,
+    #de3299,
+    #ee286f,
+    #f63859,
+    #f84d42,
+    #f56329,
+    #fa7a1e,
+    #fd9012,
+    #fda605,
+    #fbbc05
+  );
+}
+
+.dhkh-card {
+  text-align: center;
+  margin: 24px 0px;
+}
+
+.dhkh-header {
+  background: linear-gradient(
+    to right bottom,
+    #1a73e8,
+    #8862da,
+    #bd4bbe,
+    #de3299,
+    #ee286f,
+    #f63859,
+    #f84d42,
+    #f56329,
+    #fa7a1e,
+    #fd9012,
+    #fda605,
+    #fbbc05
+  );
+  border-image: linear-gradient(-60deg, #ff5858 0%, #f09819 100%);
+  /* border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%; */
+  /* background: linear-gradient(to right, red, orange); */
+
+  border-width: 2px;
+  border-style: solid;
+}
+
+.igtw-dhkh {
+  border-image: linear-gradient(to bottom, red, rgba(0, 0, 0, 0)) 1 100%;
+  background: linear-gradient(to right, red, orange);
+  width: 50%;
+  height: auto;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.igtw-btn {
+  margin-top: 20px;
+}
+
+.igtw-btn #ig {
+  background: linear-gradient(to right, red, purple);
+  margin-right: 15px;
+  border: none;
+}
+
+.igtw-btn #tw {
+  background: rgb(29, 161, 242);
+  margin-left: 15px;
+  border: none;
+}
+
+.igtw-btn #ig:hover,
+.igtw-btn #ig:focus,
+.igtw-btn #tw:hover,
+.igtw-btn #tw:focus {
+  background: #ffffff;
+  color: #0070e8;
+}
+
+/*////////////////// SEARCH COMPONENT //////////////////*/
+
+.warn-input {
+  margin: 0 auto;
+  display: flex;
+}
+#warn-input {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #ea4335;
+  margin-left: 7px;
+  margin-bottom: 0;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  header .wrap-header {
+    justify-content: center;
+  }
+
+  header .navbar-brand {
+    margin: 0;
+    display: block;
+  }
+
+  .search-bar {
+    justify-content: center;
+  }
+
+  .search-input {
+    width: 72%;
+    margin-right: 10px;
+  }
+
+  header .search-bttn {
+    margin-right: 0;
+    float: left;
+  }
+}
