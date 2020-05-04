@@ -56,7 +56,7 @@ export default function Footer() {
               Instagram
             </Button>
             <Button id="email" href="#top" rel="noopener">
-              azka.dhkh@gmail.com
+              azkanurf.dhkh@gmail.com
             </Button>
           </div>
         </div>
