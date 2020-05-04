@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f6d2b6aae99124227cf6f4bf5b7b77d",
+    "revision": "69c974be23b51496d0602b96dbd60fd9",
     "url": "/dhkh-react/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dhkh-react/static/css/2.f93178fb.chunk.css"
   },
   {
-    "revision": "f7b8a58049e49d24774f",
-    "url": "/dhkh-react/static/css/main.48398647.chunk.css"
+    "revision": "e1306ef16b6bc28e271c",
+    "url": "/dhkh-react/static/css/main.a8381913.chunk.css"
   },
   {
     "revision": "1e06bce46950fd7bcaa3",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dhkh-react/static/js/2.f7a796e1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f7b8a58049e49d24774f",
+    "revision": "e1306ef16b6bc28e271c",
     "url": "/dhkh-react/static/js/main.4c1629ad.chunk.js"
   },
   {
