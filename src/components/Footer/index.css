@@ -45,7 +45,7 @@
 
 .myprofile-card {
   text-align: center;
-  margin: 24px 0px;
+  margin: 28px 8px;
 }
 
 .myimage {
@@ -59,6 +59,8 @@
 
 .profile-btn {
   margin-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-btn #my-ig {
@@ -80,4 +82,22 @@
 .profile-btn #email:focus {
   background: #ffffff;
   color: #0070e8;
+}
+
+@media only screen and (max-width: 600px) {
+  .myprofile-card {
+    margin: 28px 10px;
+  }
+  .profile-btn {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .profile-btn #my-ig {
+    margin-right: 0;
+  }
+  .profile-btn #email {
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
