@@ -79,6 +79,20 @@
   color: #0070e8;
 }
 
+/*////////////////// SEARCH COMPONENT //////////////////*/
+
+.warn-input {
+  margin: 0 auto;
+  display: flex;
+}
+#warn-input {
+  font-size: 0.8em;
+  font-weight: 700;
+  color: #ea4335;
+  margin-left: 7px;
+  margin-bottom: 0;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   header .wrap-header {
