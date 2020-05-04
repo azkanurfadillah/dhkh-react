@@ -37,6 +37,12 @@
   cursor: pointer;
 }
 
+#broke-pg {
+  font-size: 0.7em;
+  font-weight: 700;
+  color: #ea4335;
+  letter-spacing: 0.2px;
+}
 /* ######################################################pg */
 
 .kedai-pagination {

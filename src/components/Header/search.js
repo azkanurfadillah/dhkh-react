@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-
+import { Spinner } from "reactstrap";
 import { SEARCH_KEDAI } from "../../store/types";
 
 function Search() {
   const [query, setQuery] = useState("");
   const [kedaiResult, setKedaiResult] = useState({});
   const [warnInput, setWarnInput] = useState("");
+  const [isLoad, setIsLoad] = useState(false);
   const dispatch = useDispatch();
 
   const handleSearch = async (e) => {
@@ -17,17 +18,19 @@ function Search() {
         setWarnInput("please type something");
       } else {
         setWarnInput("");
+        setIsLoad(true);
         await axios
-          .get(`http://localhost:3000/api/kedai?search=${query}`)
+          // .get(`http://localhost:3000/api/kedai?search=${query}`)
+          .get(
+            `https://hello-dhkh-express.herokuapp.com/api/kedai?search=${query}`
+          )
           .then(function (response) {
             const result = response.data.result;
             if (result.length < 1) {
-              // setKedaiResult({
-              //   isSuccess: true,
-              //   message: "maaf yang kamu cari gak ada nih",
-              // });
+              setIsLoad(false);
               setWarnInput("maaf yang kamu cari gak ada nih");
             } else {
+              setIsLoad(false);
               setKedaiResult({
                 isSuccess: response.data.isSuccess,
                 result: result,
@@ -36,12 +39,13 @@ function Search() {
             }
           })
           .catch(function (error) {
+            setWarnInput("error");
             setKedaiResult({ message: error });
             // console.log(error);
           });
       }
     } catch (err) {
-      // console.log("err search", err);
+      setWarnInput("error");
     }
   };
   // put dispath in here, it's kinda weird but yahh mau gimana lagi
@@ -66,7 +70,15 @@ function Search() {
           Search
         </button>
       </form>
-      <p id="warn-input">{warnInput}</p>
+      <section className="warn-input">
+        <Spinner
+          style={{ display: isLoad ? " block" : "none", margin: "0px" }}
+          size="sm"
+          type="grow"
+          color="danger"
+        />
+        <p id="warn-input">{warnInput}</p>
+      </section>
     </>
   );
 }

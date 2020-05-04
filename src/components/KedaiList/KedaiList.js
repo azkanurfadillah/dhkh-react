@@ -14,48 +14,80 @@ function KedaiList() {
   const [isSearch, setIsSearch] = useState(false);
   const searchResult = useSelector((state) => state.Kedai);
 
-  const receivedData = (data, offset = 0) => {
+  const initialData = (data, offset = 0) => {
     setIsLoad(false);
-
-    const slice = data.slice(offset, offset + perPage);
+    // setKedaikedai(data);
+    // console.log(data);
+    // console.log(kedaikedai);
     setPageCount(Math.ceil(data.length / perPage));
+    const slice = data.slice(offset, offset + perPage);
+    // setPageCount(Math.ceil(data.length / perPage));
     setDataSlice(slice);
-    console.log("slice", typeof slice[0].info_lain);
+    // console.log("slice", typeof slice[0].info_lain);
   };
 
   useEffect(() => {
+    console.log(window.document.title);
+    window.document.title = "Hello DHKH";
     setIsLoad(true);
+    if (searchResult.isSuccess) {
+      // dataSearch();
+      setIsSearch(searchResult.isSuccess);
+    }
     async function fetchUrl() {
       const response = await fetch(
-        // "https://hello-dhkh-express.herokuapp.com/api/kedai"
-        "http://localhost:3000/api/kedai"
+        "https://hello-dhkh-express.herokuapp.com/api/kedai"
+        // "http://localhost:3000/api/kedai"
       );
       const data = await response.json();
       setKedaikedai(data);
-      receivedData(data);
+      initialData(data);
     }
     fetchUrl();
-    if (searchResult.isSuccess) {
-      dataSearch();
-    }
   }, [searchResult]);
 
   const handlePageClick = (e) => {
     const selectedPage = e.selected;
     const offset = selectedPage * perPage;
-
-    receivedData(kedaikedai, offset);
-  };
-
-  const dataSearch = () => {
-    console.log("state store", searchResult);
-    setIsSearch(searchResult.isSuccess);
-  };
-
-  const renderKedai = () => {
     if (isSearch) {
+      renderKedai(offset);
+    } else {
+      initialData(kedaikedai, offset);
+    }
+  };
+
+  const buttonBack = () => {
+    if (isSearch) {
+      return (
+        <>
+          <button
+            className="btn btn-primary btn-sm"
+            style={{ letterSpacing: "2px" }}
+            onClick={handleBack}
+          >
+            Back
+          </button>
+          <p id="broke-pg"> maaf paginationnya gak bisa di pake. lol</p>
+        </>
+      );
+    }
+  };
+
+  const handleBack = () => {
+    console.log("halo back", kedaikedai);
+    setIsSearch(false);
+    // initialData(kedaikedai);
+  };
+
+  const renderKedai = (offset = 0) => {
+    if (isSearch) {
+      console.log(searchResult.result.length);
+      const result = searchResult.result;
+      // setPageCount(Math.ceil(result.length / perPage));
+      // const slice = searchResult.result.slice(offset, offset + perPage);
       // return "halo";
-      return searchResult.result.map((kedai, index) => (
+      // buttonBack();
+      return result.map((kedai, index) => (
         <div className="kedai-list" key={kedai._id}>
           <div className="main-kedai-list">
             <h4>{kedai.nama_kedai} </h4>
@@ -77,6 +109,8 @@ function KedaiList() {
     }
   };
 
+  // console.log("pC", pageCount);
+
   return (
     <div className="kedai">
       <section
@@ -90,6 +124,14 @@ function KedaiList() {
         <Spinner type="grow" color="info" />
       </section>
       <section>{renderKedai()}</section>
+      <div
+        className="btn-back"
+        style={{
+          margin: `10px 0 0 15px`,
+        }}
+      >
+        {buttonBack()}
+      </div>
       <section>
         <div className="pagination">
           <ReactPaginate
@@ -112,13 +154,3 @@ function KedaiList() {
 }
 
 export default KedaiList;
-
-// {dataSlice.map((kedai, index) => (
-//   <div className="kedai-list" key={kedai._id}>
-//     <div className="main-kedai-list">
-//       <h4>{kedai.nama_kedai} </h4>
-//       <p>{kedai.halte_stasiun} </p>
-//     </div>
-//     <KedaiDetail kedai={kedai} />
-//   </div>
-// ))}
