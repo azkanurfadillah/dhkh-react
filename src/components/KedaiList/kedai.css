@@ -93,3 +93,13 @@
     max-width: 260px;
   }
 }
+
+@media only screen and (max-width: 380px) {
+  .kedai-list {
+    padding: 10px 13px 5px;
+  }
+
+  .main-kedai-list {
+    max-width: 230px;
+  }
+}
