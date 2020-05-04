@@ -17,11 +17,6 @@
   );
 }
 
-.dhkh-card {
-  text-align: center;
-  margin: 24px 0px;
-}
-
 .dhkh-header {
   background: linear-gradient(
     to right bottom,
@@ -44,6 +39,13 @@
 
   border-width: 2px;
   border-style: solid;
+}
+
+/*////////////////// CARD PROFILE DHKH //////////////////*/
+
+.dhkh-card {
+  text-align: center;
+  margin: 24px 0px;
 }
 
 .igtw-dhkh {

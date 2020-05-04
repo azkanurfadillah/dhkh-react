@@ -57,7 +57,9 @@ const KedaiDetail = ({ kedai }) => {
             ada kesalahan dari info {kedai.nama_kedai}?
           </ModalHeader>
           <ModalBody>
-            <span className="onworking-ft">feature masih dalam pengerjaan</span>
+            <div className="alert alert-danger onworking-ft" role="alert">
+              feature masih dalam pengerjaan
+            </div>
           </ModalBody>
         </Modal>
         <button
