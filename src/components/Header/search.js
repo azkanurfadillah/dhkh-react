@@ -77,7 +77,7 @@ function Search() {
           type="grow"
           color="danger"
         />
-        <p id="warn-input">{warnInput}</p>
+        <p id="warn-input-text">{warnInput}</p>
       </section>
     </>
   );
